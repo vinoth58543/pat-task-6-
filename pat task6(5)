@@ -1,0 +1,16 @@
+def minimize_mango_difference(bags, M):
+    bags.sort()  # Sort the bags in ascending order
+    min_difference = bags[M - 1] - bags[0]  # Initial difference
+    
+    for i in range(1, len(bags) - M + 1):
+        current_difference = bags[i + M - 1] - bags[i]
+        min_difference = min(min_difference, current_difference)
+    
+    return min_difference
+
+# Example usage:
+N = 10
+M = 4
+bags = [3, 7, 1, 9, 4, 5, 8, 6, 2, 10]
+result = minimize_mango_difference(bags, M)
+print(result)  # This will give you the minimum difference.
