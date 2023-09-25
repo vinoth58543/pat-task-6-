@@ -1,0 +1,27 @@
+# Define three lists
+list1 = [1, 2, 3, 4, 5, 5, 6]
+list2 = [4, 5, 6, 7, 8]
+list3 = [5, 6, 9, 10]
+
+# Find duplicates using sets and the intersection operation
+set1 = set(list1)
+set2 = set(list2)
+set3 = set(list3)
+
+# Find duplicates between list1 and list2
+common12 = set1.intersection(set2)
+
+# Find duplicates between list1 and list3
+common13 = set1.intersection(set3)
+
+# Find duplicates between list2 and list3
+common23 = set2.intersection(set3)
+
+# Find duplicates in all three lists
+common123 = set1.intersection(set2, set3)
+
+# Print the duplicates
+print("Duplicates in list1 and list2:", common12)
+print("Duplicates in list1 and list3:", common13)
+print("Duplicates in list2 and list3:", common23)
+print("Duplicates in all three lists:", common123)
