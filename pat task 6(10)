@@ -1,0 +1,24 @@
+def has_sublist_with_zero_sum(lst):
+    prefix_sum = 0
+    seen_sums = set()
+
+    for num in lst:
+        prefix_sum += num
+
+        # If the current prefix_sum has been seen before or
+        # if the current prefix_sum is zero, there's a sublist
+        # with a sum of zero.
+        if prefix_sum == 0 or prefix_sum in seen_sums:
+            return True
+
+        seen_sums.add(prefix_sum)
+
+    return False
+    # Example usage:
+my_list = [4.2, -3.1, 6]
+result = has_sublist_with_zero_sum(my_list)
+
+if result:
+    print("There is a sub-list with a sum equal to zero.")
+else:
+    print("No sub-list with a sum equal to zero found.")
